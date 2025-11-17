@@ -15,13 +15,13 @@
     <Label text="CV Preview"
            style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #47c4c0;" />
 
-    <Label text="Name:" style="-fx-font-size: 12px; -fx-font-weight: bold; "/>
+
     <TextFlow fx:id="nameText"  />
-    <Label text="Email:" style="-fx-font-size: 12px; -fx-font-weight: bold; "/>
+
     <TextFlow fx:id="emailText"  />
-    <Label text="Phone no:" style="-fx-font-size: 12px; -fx-font-weight: bold; "/>
+
     <TextFlow fx:id="phoneText"  />
-    <Label text="Address:" style="-fx-font-size: 12px; -fx-font-weight: bold; "/>
+
     <TextFlow fx:id="addressText"  />
 
     <Label text="Education:" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
