@@ -19,10 +19,10 @@ public class CVPreviewController {
     public void setCVData(String name, String email, String phone, String address,
                           String education, String skills, String workExp, String projects) {
 
-        nameText.getChildren().add(new Text("Name:"  + name ));
-        emailText.getChildren().add(new Text( "Email:" + email));
-        phoneText.getChildren().add(new Text("Phone No:"+ phone));
-        addressText.getChildren().add(new Text("Address:" + address));
+        nameText.getChildren().add(new Text("1. Name : "  + name ));
+        emailText.getChildren().add(new Text( "2. Email : " + email));
+        phoneText.getChildren().add(new Text("3. Phone No : "+ phone));
+        addressText.getChildren().add(new Text("4. Address : " + address));
 
         educationText.getChildren().add(new Text(education));
         skillsText.getChildren().add(new Text(skills));
