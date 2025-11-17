@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.project_cv_bulder.CVPreviewController"
+      spacing="15"
+      style="-fx-padding: 30; -fx-background-color: white;">
+
+    <Label text="CV Preview"
+           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #47c4c0;" />
+
+    <Label text="Name:" style="-fx-font-size: 12px; -fx-font-weight: bold; "/>
+    <TextFlow fx:id="nameText"  />
+    <Label text="Email:" style="-fx-font-size: 12px; -fx-font-weight: bold; "/>
+    <TextFlow fx:id="emailText"  />
+    <Label text="Phone no:" style="-fx-font-size: 12px; -fx-font-weight: bold; "/>
+    <TextFlow fx:id="phoneText"  />
+    <Label text="Address:" style="-fx-font-size: 12px; -fx-font-weight: bold; "/>
+    <TextFlow fx:id="addressText"  />
+
+    <Label text="Education:" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
+    <TextFlow fx:id="educationText" />
+
+    <Label text="Skills:" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
+    <TextFlow fx:id="skillsText" />
+
+    <Label text="Work Experience:" style="-fx-font-size: 12px; -fx-font-weight: bold; "/>
+    <TextFlow fx:id="workExpText" />
+
+    <Label text="Projects:" style="-fx-font-size: 12px; -fx-font-weight: bold; "/>
+    <TextFlow fx:id="projectsText" />
+
+</VBox>
