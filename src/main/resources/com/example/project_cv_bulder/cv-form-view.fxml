@@ -1,66 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.project_cv_bulder.CVFormController">
+<BorderPane style="-fx-background-color: linear-gradient(to bottom right, #b2e0e0, #d0f0f0);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_cv_bulder.CVFormController">
 
 
     <top>
-        <Label text="CV Form"
-               style="-fx-font-size: 22px; -fx-font-weight: bold;"
-               BorderPane.alignment="CENTER"/>
+        <Label style="-fx-font-size: 22px; -fx-font-weight: bold;" text="CV Form" BorderPane.alignment="CENTER" />
     </top>
 
 
     <center>
         <GridPane hgap="15" vgap="15">
             <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
+                <Insets bottom="20" left="20" right="20" top="20" />
             </padding>
 
-            <Label text="Full Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-            <TextField fx:id="fullNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="fullNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-            <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-            <TextField fx:id="emailField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-            <Label text="Phone:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-            <TextField fx:id="phoneField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-            <Label text="Address:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-            <TextField fx:id="addressField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-            <Label text="Education:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-            <TextArea fx:id="educationField" prefRowCount="3" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            <Label text="Education:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextArea fx:id="educationField" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-            <Label text="Skills:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-            <TextArea fx:id="skillsField" prefRowCount="3" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+            <Label text="Skills:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextArea fx:id="skillsField" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-            <Label text="Work Experience:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
-            <TextArea fx:id="workExpField" prefRowCount="3" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            <Label text="Work Experience:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <TextArea fx:id="workExpField" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="6" />
 
-            <Label text="Projects:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
-            <TextArea fx:id="projectsField" prefRowCount="3" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+            <Label text="Projects:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <TextArea fx:id="projectsField" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="7" />
 
 
-            <Button text="Generate CV"
-                    fx:id="generateCVButton"
-                    onAction="#handleGenerateCV"
-                    style="-fx-font-size: 16px;"
-                    GridPane.rowIndex="8"
-                    GridPane.columnIndex="1"/>
+            <Button fx:id="generateCVButton" onAction="#handleGenerateCV" style="-fx-font-size: 16px;" text="Generate CV" textFill="#379e94" GridPane.columnIndex="1" GridPane.rowIndex="8" />
 
-            <Label fx:id="errorLabel"
-                   text="Fill all sections!"
-                   textFill="red"
-                   visible="false"
-                   style="-fx-font-size: 14px; -fx-font-weight: bold;"
-                   GridPane.rowIndex="9"
-                   GridPane.columnIndex="1"/>
+            <Label fx:id="errorLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Fill all sections!" textFill="red" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
         </GridPane>
     </center>
 
