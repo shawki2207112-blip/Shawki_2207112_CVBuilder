@@ -4,36 +4,29 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.TextFlow?>
 
-<VBox spacing="15" style="-fx-padding: 30;
--fx-background-color: white;"
-      xmlns="http://javafx.com/javafx/25"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.project_cv_bulder.CVPreviewController">
+<VBox spacing="15" style="-fx-padding: 30; -fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_cv_bulder.CVPreviewController">
 
-    <Label style="-fx-font-size: 18px;
-    -fx-font-weight: bold;
-    -fx-text-fill: Black;"
-           text="Curriculum Vitae" />
+    <Label style="-fx-font-size: 26px;     -fx-font-weight: bold;     -fx-text-fill: Black;" text="Curriculum Vitae" />
 
 
-    <TextFlow fx:id="nameText" style="-fx-font-size: 14px;"/>
+    <TextFlow fx:id="nameText" />
 
-    <TextFlow fx:id="emailText" style="-fx-font-size: 14px;"/>
+    <TextFlow fx:id="emailText" />
 
-    <TextFlow fx:id="phoneText" style="-fx-font-size: 14px;"/>
+    <TextFlow fx:id="phoneText" />
 
-    <TextFlow fx:id="addressText" style="-fx-font-size: 14px;" />
+    <TextFlow fx:id="addressText" />
 
-    <Label style="-fx-font-size: 14px;" text="5. Education:" />
+    <Label style="-fx-font-size: 12px;" text="Education:" />
     <TextFlow fx:id="educationText" />
 
-    <Label style="-fx-font-size: 14px; " text="6. Skills:" />
+    <Label style="-fx-font-size: 12px; " text="Skills:" />
     <TextFlow fx:id="skillsText" />
 
-    <Label style="-fx-font-size: 14px; " text="7. Work Experience:" />
+    <Label style="-fx-font-size: 12px; " text="Work Experience:" />
     <TextFlow fx:id="workExpText" />
 
-    <Label style="-fx-font-size: 14px;  " text="8. Projects:" />
+    <Label style="-fx-font-size: 12px;  " text="Projects:" />
     <TextFlow fx:id="projectsText" />
 
 </VBox>
