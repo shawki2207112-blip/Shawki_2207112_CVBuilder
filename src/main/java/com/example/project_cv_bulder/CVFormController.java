@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 public class CVFormController {
@@ -16,13 +17,15 @@ public class CVFormController {
     @FXML private TextField emailField;
     @FXML private TextField phoneField;
     @FXML private TextField addressField;
-
     @FXML private TextArea educationField;
     @FXML private TextArea skillsField;
     @FXML private TextArea workExpField;
     @FXML private TextArea projectsField;
 
     @FXML private Label errorLabel;
+
+    private CVModel editingCV = null;
+    private Runnable onSave;
 
     @FXML
     private void handleGenerateCV() {
@@ -44,12 +47,8 @@ public class CVFormController {
 
         errorLabel.setVisible(false);
 
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("cv-preview-view.fxml"));
-            Parent root = loader.load();
-
-            CVPreviewController controller = loader.getController();
-            controller.setCVData(
+        if (editingCV == null) {
+            DatabaseHelper.insertCV(
                     fullNameField.getText(),
                     emailField.getText(),
                     phoneField.getText(),
@@ -59,14 +58,39 @@ public class CVFormController {
                     workExpField.getText(),
                     projectsField.getText()
             );
-
-            Stage stage = new Stage();
-            stage.setTitle("CV Preview");
-            stage.setScene(new Scene(root, 600, 700));
-            stage.show();
-
-        } catch (IOException e) {
-            e.printStackTrace();
+        } else {
+            DatabaseHelper.updateCV(
+                    editingCV.getId(),
+                    fullNameField.getText(),
+                    emailField.getText(),
+                    phoneField.getText(),
+                    addressField.getText(),
+                    educationField.getText(),
+                    skillsField.getText(),
+                    workExpField.getText(),
+                    projectsField.getText()
+            );
         }
+
+        if (onSave != null) onSave.run();
+
+        Stage currentStage = (Stage) fullNameField.getScene().getWindow();
+        currentStage.close();
+    }
+
+    public void loadCVForEdit(CVModel cv) {
+        this.editingCV = cv;
+        fullNameField.setText(cv.getName());
+        emailField.setText(cv.getEmail());
+        phoneField.setText(cv.getPhone());
+        addressField.setText(cv.getAddress());
+        educationField.setText(cv.getEducation());
+        skillsField.setText(cv.getSkills());
+        workExpField.setText(cv.getWorkExp());
+        projectsField.setText(cv.getProjects());
+    }
+
+    public void setOnSave(Runnable callback) {
+        this.onSave = callback;
     }
 }
