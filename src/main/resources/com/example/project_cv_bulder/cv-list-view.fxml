@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.project_cv_bulder.CVListController"
+      spacing="12" style="-fx-padding: 20;">
+
+    <Label text="Saved CVs" style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+
+    <ListView fx:id="cvList" prefHeight="320" />
+
+    <HBox spacing="10">
+        <Button text="Preview" onAction="#previewCV" />
+        <Button text="Edit" onAction="#editCV" />
+        <Button text="Delete" onAction="#deleteCV" />
+    </HBox>
+
+</VBox>
