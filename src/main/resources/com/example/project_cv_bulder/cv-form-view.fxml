@@ -10,13 +10,14 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane style="-fx-background-color: linear-gradient(to bottom right, #b2e0e0, #d0f0f0);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_cv_bulder.CVFormController">
-
+<BorderPane style="-fx-background-color: linear-gradient(to bottom right, #b2e0e0, #d0f0f0);"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.project_cv_bulder.CVFormController">
 
     <top>
         <Label style="-fx-font-size: 22px; -fx-font-weight: bold;" text="CV Form" BorderPane.alignment="CENTER" />
     </top>
-
 
     <center>
         <GridPane hgap="15" vgap="15">
@@ -48,27 +49,25 @@
             <Label text="Projects:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
             <TextArea fx:id="projectsField" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="7" />
 
-
-            <Button fx:id="generateCVButton" onAction="#handleGenerateCV" style="-fx-font-size: 16px;" text="Generate CV" textFill="#379e94" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-
+            <Button fx:id="generateCVButton" onAction="#handleGenerateCV" style="-fx-font-size: 16px;" text="Save &amp; Preview" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             <Label fx:id="errorLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Fill all sections!" textFill="red" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-         <columnConstraints>
-            <ColumnConstraints />
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
+
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
         </GridPane>
     </center>
-
 </BorderPane>

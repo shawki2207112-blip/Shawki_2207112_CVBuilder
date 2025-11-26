@@ -1,15 +1,19 @@
 package com.example.project_cv_bulder;
 
+import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper {
 
-    // Use cv.db at project root. Change path if you place it elsewhere.
-    private static final String DB_URL = "jdbc:sqlite:cv.db";
+    private static final String DB_FILE = "cv.db";
+    private static final String DB_URL = "jdbc:sqlite:" + new File(DB_FILE).getAbsolutePath();
 
     public static void createTable() {
+        File dbFile = new File(DB_FILE);
+        System.out.println("Database path: " + dbFile.getAbsolutePath());
+
         String sql = """
                 CREATE TABLE IF NOT EXISTS cv (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,6 +31,7 @@ public class DatabaseHelper {
         try (Connection conn = DriverManager.getConnection(DB_URL);
              Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
+            System.out.println("Table created (or already exists).");
         } catch (SQLException e) {
             e.printStackTrace();
         }
